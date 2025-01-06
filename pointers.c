@@ -1,5 +1,44 @@
 #include <stdio.h>
 
+
+void myFunction() {
+  printf("I just got executed in the main function!\n");
+}
+
+void calculateSum() {
+  int x = 10;
+  int y = 5;
+
+  int sum = x + y;
+
+  printf("The sum of x and y is: %d\n", sum);
+}
+
+/*
+  
+  If we consider the "Calculate the Sum of Numbers" example from the previous function, 
+  we can make a more sustainable program by using function parameters:
+
+*/
+void calculateSum2(int x, int y) {
+
+  int sum = x + y;
+  printf("The sum of %d + %d is: %d\n", x, y, sum);
+}
+
+
+void welcomeFunction(char name[]) {
+
+  printf("Hello %s\n", name);
+}
+
+/*
+Notes on Parameters
+Note that when you are working with multiple parameters, 
+the function call must have the same number of arguments as there are parameters, 
+and the arguments must be passed in the same order.
+
+*/
 int main() {
   int myAge = 43;  // An int variable
   int* ptr = &myAge;  // A pointer variable, with the name ptr, that stores the address of myAge
@@ -127,5 +166,31 @@ printf("%d\n", *(myNumbers4 + 1));
 printf("%d\n", *(myNumbers4 + 2));
 printf("%d\n", *(myNumbers4 + 3));
 
+
+/*
+
+Create a Function
+To create (often referred to as declare) your own function, 
+specify the name of the function, 
+followed by parentheses () and curly brackets {}:
+
+Syntax
+void myFunction() {
+  // code to be executed
+}
+*/
+  myFunction();
+  calculateSum();
+  welcomeFunction("Mohamed");
+  welcomeFunction("Ali");
+  welcomeFunction("Hassan");
+  calculateSum2(143, 167);
+  calculateSum2(1500, 1800);
+
+  /*
+    When a parameter is passed to the function, it is called an argument. 
+    So, from the example above: name is a parameter, while Mohamed, Ali and Hassan are arguments.
+  
+  */
   return 0;
 }
