@@ -39,6 +39,29 @@ the function call must have the same number of arguments as there are parameters
 and the arguments must be passed in the same order.
 
 */
+
+
+/*
+
+Pass Arrays as Function Parameters
+You can also pass arrays to a function:
+
+*/
+
+void myFunction2(int myNums[5]) {
+
+  for (int i = 0; i < 5; i++) {
+    printf("%d\n", myNums[i]);
+  }
+}
+
+/*
+The function (myFunction) takes an array as its parameter (int myNumbers[5]), and loops through the array elements with the for loop.
+When the function is called inside main(), we pass along the myNumbers array, which outputs the array elements.
+Note that when you call the function, you only need to use the name of the array when passing it as an argument myFunction(myNumbers). 
+However, the full declaration of the array is needed in the function parameter (int myNumbers[5]).
+*/
+
 int main() {
   int myAge = 43;  // An int variable
   int* ptr = &myAge;  // A pointer variable, with the name ptr, that stores the address of myAge
@@ -186,7 +209,8 @@ void myFunction() {
   welcomeFunction("Hassan");
   calculateSum2(143, 167);
   calculateSum2(1500, 1800);
-
+  int myNums[5] = {10, 20, 30, 40, 50};
+  myFunction2(myNums);
   /*
     When a parameter is passed to the function, it is called an argument. 
     So, from the example above: name is a parameter, while Mohamed, Ali and Hassan are arguments.
