@@ -62,6 +62,62 @@ Note that when you call the function, you only need to use the name of the array
 However, the full declaration of the array is needed in the function parameter (int myNumbers[5]).
 */
 
+/*
+Return Values
+The void keyword, used in the previous examples, indicates that the function should not return a value. 
+If you want the function to return a value, 
+you can use a data type (such as int or float, etc.) instead of void, and use the return keyword inside the function:
+
+*/
+
+int myFunction3(int x) {
+
+  return 5 + x;
+}
+
+/*
+This example returns the sum of a function with two parameters:
+*/
+
+int myFunction4(int x, int y) {
+  return x + y;
+}
+
+/*
+If we consider the "Calculate the Sum of Numbers" example one more time, 
+we can use return instead and store the results in different variables. 
+This will make the program even more flexible and easier to control:
+*/
+
+int calculateSum3(int x, int y) {
+  return x + y;
+}
+
+// If you have many "result variables", it is better to store the results in an array:
+
+int calculateSum4(int x, int y) {
+
+  return x + y;
+}
+
+int calculateSum5(int x, int y) {
+
+  return x + y;
+}
+
+/*
+
+Real-Life Example
+To demonstrate a practical example of using functions, 
+let's create a program that converts a value from fahrenheit to celsius:
+
+*/
+
+float toCelcius(float fahrenheit) {
+  return (5.0 / 9.0) * (fahrenheit - 32.0);
+
+}
+
 int main() {
   int myAge = 43;  // An int variable
   int* ptr = &myAge;  // A pointer variable, with the name ptr, that stores the address of myAge
@@ -211,10 +267,78 @@ void myFunction() {
   calculateSum2(1500, 1800);
   int myNums[5] = {10, 20, 30, 40, 50};
   myFunction2(myNums);
+
   /*
-    When a parameter is passed to the function, it is called an argument. 
-    So, from the example above: name is a parameter, while Mohamed, Ali and Hassan are arguments.
-  
+  When a parameter is passed to the function, it is called an argument. 
+  So, from the example above: name is a parameter, while Mohamed, Ali and Hassan are arguments.
   */
+
+  printf("The result of myFunction3() is: %d\n", myFunction3(3));
+
+  printf("Result of myFunction4() is: %d\n", myFunction4(5, 3));
+
+
+  int result1 = calculateSum3(5, 3);
+  int result2 = calculateSum3(8, 2);
+  int result3 = calculateSum3(15, 15);
+
+  printf("Result1 is: %d\n", result1);
+  printf("Result2 is: %d\n", result2);
+  printf("Result3 is: %d\n", result3);
+
+  /*
+  Tip: If you have many "result variables", 
+  it is better to store the results in an array:
+  */
+
+  // Create an array
+  int resultArr[6];
+  int resultArray2[5];
+
+  // Call the function with different arguments and store the results in the array
+
+  resultArr[0] = calculateSum4(5, 3);
+  resultArr[1] = calculateSum4(8, 2);
+  resultArr[2] = calculateSum4(15, 15);
+  resultArr[3] = calculateSum4(9, 1);
+  resultArr[4] = calculateSum4(7, 7);
+  resultArr[5] = calculateSum4(1, 1);
+
+for (int i = 0; i < 6; i++) {
+  printf("Result%d is = %d\n", i + 1, resultArr[i]);
+}
+
+
+// Create an array2
+  
+  int resultarray2[5];
+  
+  // Call the function with different arguments and store the different results in the array
+  
+  resultArray2[0] = calculateSum5(20, 30);
+  resultArray2[1] = calculateSum5(15, 16);
+  resultArray2[2] = calculateSum5(18, 22);
+  resultArray2[3] = calculateSum5(21, 36);
+  resultArray2[4] = calculateSum5(100, 120);
+  
+  for (int i = 0; i < 5; i++) {
+  	printf("Result%d is = %d\n", i + 1, resultArray2[i]);
+  
+  }
+  
+
+  // Set a fahrenheit value
+
+  float f_value = 98.8;
+
+  //Call the function with the fahrenheit value
+
+  float resultat = toCelcius(f_value);
+
+  // Print the fahrenheit value
+
+  printf("Fahrenheit: %.2f\n", f_value);
+
+  
   return 0;
 }
