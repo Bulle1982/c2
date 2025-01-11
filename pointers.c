@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <math.h>
 
 void myFunction() {
   printf("I just got executed in the main function!\n");
